@@ -1,6 +1,6 @@
 const Account = require("../models/Account");
 
-// ➕ Create account
+// Create account
 exports.createAccount = async (req, res) => {
   try {
     const { name, balance } = req.body;
@@ -17,7 +17,7 @@ exports.createAccount = async (req, res) => {
   }
 };
 
-// 📄 Get all accounts
+// Get all accounts
 exports.getAccounts = async (req, res) => {
   try {
     const accounts = await Account.find();
@@ -27,7 +27,7 @@ exports.getAccounts = async (req, res) => {
   }
 };
 
-// 🔁 Transfer amount between accounts
+// Transfer amount between accounts
 exports.transferAmount = async (req, res) => {
   try {
     const { fromAccountId, toAccountId, amount } = req.body;

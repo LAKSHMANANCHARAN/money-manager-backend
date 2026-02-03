@@ -9,7 +9,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 🔥 THIS LINE WAS MISSING
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/accounts", accountRoutes);
 

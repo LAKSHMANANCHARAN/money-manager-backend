@@ -6,7 +6,7 @@ const {
   getTransactions,
   updateTransaction,
   getCategorySummary,
-  getSummary, // 👈 add
+  getSummary,
 } = require("../controllers/transactionController");
 
 

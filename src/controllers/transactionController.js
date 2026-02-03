@@ -1,6 +1,6 @@
 const Transaction = require("../models/Transaction");
 
-// ➕ Add Income or Expense
+// Add Income or Expense
 exports.addTransaction = async (req, res) => {
   try {
     const { type, amount, category, division, description, account } = req.body;
@@ -25,7 +25,7 @@ exports.addTransaction = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-// 📜 Get all transactions with filters
+// Get all transactions with filters
 exports.getTransactions = async (req, res) => {
   try {
     const { category, division, startDate, endDate, type } = req.query;
@@ -52,7 +52,7 @@ exports.getTransactions = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-// ✏️ Edit transaction (within 12 hours only)
+// Edit transaction (within 12 hours only)
 exports.updateTransaction = async (req, res) => {
   try {
     const transaction = await Transaction.findById(req.params.id);
@@ -79,7 +79,7 @@ exports.updateTransaction = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-// 📊 Dashboard summary (weekly / monthly / yearly)
+// Dashboard summary (weekly / monthly / yearly)
 exports.getSummary = async (req, res) => {
   try {
     const { range } = req.query;
@@ -123,7 +123,7 @@ exports.getSummary = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-// 📂 Category-wise summary
+// Category-wise summary
 exports.getCategorySummary = async (req, res) => {
   try {
     const summary = await Transaction.aggregate([
