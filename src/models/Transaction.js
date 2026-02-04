@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+// amazonq-ignore-next-lineconst mongoose = require("mongoose");
 
 const transactionSchema = new mongoose.Schema(
   {
