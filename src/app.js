@@ -6,7 +6,12 @@ const budgetRoutes = require("./routes/budgetRoutes");
 
 const app = express();
 
-app.use(cors());
+// CORS configuration - allow all origins for deployment
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
+
 app.use(express.json());
 
 app.use("/api/transactions", transactionRoutes);
