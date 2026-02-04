@@ -123,10 +123,15 @@ exports.getSummary = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-// Category-wise summary
+// Category-wise summary for expenses only
 exports.getCategorySummary = async (req, res) => {
   try {
     const summary = await Transaction.aggregate([
+      {
+        $match: {
+          type: "expense" // Only include expenses in pie chart
+        }
+      },
       {
         $group: {
           _id: "$category",
